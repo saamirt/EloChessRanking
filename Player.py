@@ -1,6 +1,6 @@
 class Player:
     def __init__(self, player_id, rating=1200):
-        self.__id = player_id
+        self.__id = str(player_id)
         self.__rating = rating
         self.__matches = []
 

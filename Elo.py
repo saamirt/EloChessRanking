@@ -11,10 +11,10 @@ class Elo:
         Elo.__match_count = 0
 
     @staticmethod
-    def add_player(player):
-        if not isinstance(player, Player):
-            raise ValueError('Not a valid player')
-        Elo.__players[player.get_id()] = player
+    def add_player(player_id, rating=1200):
+        if player_id in Elo.__players:
+            raise KeyError('Player ID taken')
+        Elo.__players[player_id] = Player(player_id, rating)
 
     @staticmethod
     def remove_player(player_id):
